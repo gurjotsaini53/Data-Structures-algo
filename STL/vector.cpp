@@ -115,7 +115,8 @@ v.pop_back(); // {10}
 // swaping vectors
 vector<int> p1={1,2}; // {1,2}
 vector<int> p2={3,4}; // {3,4}
-
+cout<<" front element = "<<p1.front()<<endl;
+cout<<" back element = "<<p1.back()<<endl;
 p1.swap(p2);
 
 // p1 -> {3,4}
@@ -125,6 +126,8 @@ cout<<"Is vector empty (0 = no or 1 = yes) = "<<p1.empty()<<endl;
 
 p1.clear() ; // erases the entire vector
 cout<<p1.empty()<<endl;
+cout<<p1.size()<<endl; // size 0 when all elements are removed through clear
+cout<<p1.capacity()<<endl; // but capacity remains same
 }
 
 int  main(){
