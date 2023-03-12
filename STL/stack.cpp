@@ -3,7 +3,7 @@
 using namespace std;
 void explainStack()
 {
-
+// insertion and deletion only at end is done in stack
     // LIFO
  // Last in first out
 stack<int> st;
@@ -23,7 +23,7 @@ cout<<st.empty()<<endl;
 stack<int> s1,s2;
 s1.swap(s2);
 
-
+// st.emplace(5);
  
 
 }
