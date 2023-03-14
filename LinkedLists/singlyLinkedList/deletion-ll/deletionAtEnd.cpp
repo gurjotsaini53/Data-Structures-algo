@@ -24,36 +24,38 @@ void printList(Node *head)
     cout<<endl;
 }
 
-void deletitionAtBegin(Node **head)
+void deletitionAtEnd(Node *&head)
 {
-if ((*head)==NULL)
-{
-    cout<<"Underflow"<<endl;
+    // if list is empty
+  if (head==NULL)
+  {
+    cout<<"list is empty"<<endl;
     return;
+  }
+    // if there is only one node in linked list
+else if (head->next==NULL)
+{
+    delete head;
 }
+
 else{
-    Node *ptr =*head;
+    Node *ptr = head;
+    Node *prev=NULL;
+
+    while(ptr->next!=NULL)
+    {
+        prev=ptr;
+        ptr=ptr->next;
+    }
+    prev->next = NULL;
     
-    *head=(*head)->next;
-  delete ptr;
-
-}
-}
-
-void deletitionAtBegin2(Node *&head)
-{
-if (head==NULL)
-{
-    cout<<"Underflow"<<endl;
-    return;
-}
-else{
-    Node *ptr =head;
-    head=head->next;
     delete ptr;
 
+
 }
 }
+
+
 int main(){
     Node *head = new Node(10);
     Node *second = new Node(20);
@@ -65,13 +67,10 @@ int main(){
     third->next = NULL;
     
 
-    // using deletionAtBegin function
+  
+    // using deletionAtEnd function
     printList(head);
-    deletitionAtBegin(&head);
-    printList(head);
-    // using deletionAtBegin2 function
-    printList(head);
-    deletitionAtBegin2(head);
+    deletitionAtEnd(head);
     printList(head);
 
     return 0;
